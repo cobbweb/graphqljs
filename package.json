@@ -1,0 +1,35 @@
+{
+  "name": "graphqljs",
+  "version": "0.0.0",
+  "description": "GraphQL parser",
+  "main": "graphql-parser.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cobbweb/graphqljs.git"
+  },
+  "keywords": [
+    "graphql",
+    "relal",
+    "flux",
+    "parser"
+  ],
+  "scripts": {
+    "build": "./node_modules/.bin/pegjs graphql.pegjs graphql-parser.js",
+    "demo": "npm run build && node ./graphql.js"
+  },
+  "author": "Andrew Cobby <andrew.cobby@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cobbweb/graphqljs/issues"
+  },
+  "homepage": "https://github.com/cobbweb/graphqljs",
+  "devDependencies": {
+    "pegjs": "^0.8.0"
+  }
+}
