@@ -1,0 +1,14 @@
+node(1) {
+  id,
+  name,
+  birthdate {
+    month,
+    day
+  },
+  friends.after(2).first(1) {
+    cursor,
+    node {
+      name
+    }
+  }
+}
