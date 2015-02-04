@@ -1,5 +1,5 @@
 {
-  "name": "graphqljs",
+  "name": "graphql",
   "version": "0.0.0",
   "description": "GraphQL parser",
   "main": "graphql-parser.js",
