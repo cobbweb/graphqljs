@@ -11,17 +11,26 @@ calls
     { return Array.isArray(calls) ? calls : [calls]; }
 
 call
-  = name:call_name parameter:call_parameters
-    { return { call: name, parameter: parameter }}
+  = name:call_name parameters:call_parameters
+    { return { call: name, parameters: parameters }}
 
 call_name
   = identifier
 
 call_parameters
-  = ws? '(' ws? parameter:paramater? ws? ')'
-    { return parameter; }
+  = ws? '(' ws? call_parameters:parameter_list? ')'
+    { return call_parameters; }
 
-paramater
+parameter_list
+  = parameter_list:(
+      first:parameter
+      rest:(ws? property_separator ws? p:parameter { return p })*
+      ws?
+      { return [first].concat(rest); }
+    )
+    { return parameter_list; }
+
+parameter
   = parameter:[a-zA-Z0-9]+ { return parameter.join('') }
 
 block
