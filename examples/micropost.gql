@@ -1,0 +1,5 @@
+micropost( 15, 19 ) {
+  content,
+  stars,
+  user { handle }
+}
